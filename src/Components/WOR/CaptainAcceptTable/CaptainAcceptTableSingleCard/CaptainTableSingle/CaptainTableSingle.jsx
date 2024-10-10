@@ -7,7 +7,7 @@ const CaptainTableSingle = ({ captain, onWhichOpenDetails }) => {
     captain?.profilePic?.length > 0
       ? `${imageUrl}/${captain?.profilePic}`
       : "/images/user-profile.png";
-
+  const statusColor = captain?.reviewToVerified ? "yellow" : "#4fa953";
   return (
     <div className="captaine-accept-table-single-card">
       <div>
@@ -19,7 +19,13 @@ const CaptainTableSingle = ({ captain, onWhichOpenDetails }) => {
       </div>
       <span>{captain?.mobile}</span>
       <span>
-        <span>Pending</span>
+        <span
+          style={{
+            background: statusColor,
+          }}
+        >
+          {captain?.reviewToVerified ? "Review" : "Pending"}
+        </span>
       </span>
       <span>{captain?.signUpDateAndTime?.slice(0, 10)}</span>
       <span>

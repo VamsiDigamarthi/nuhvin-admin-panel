@@ -3,34 +3,29 @@ import "./CaptainAceptTableImageCard.css";
 import { FaCaretDown } from "react-icons/fa";
 import CaptainImageDisplay from "../CaptainAcceptTableSingleCard/CaptainImageDisplay/CaptainImageDisplay";
 import { useDispatch } from "react-redux";
-import {
-  openAdharModalFunc,
-  openDrivingLicenceModalFunc,
-  openVehicleRcModalFunc,
-} from "../../../../Redux/features/WOR/ModalOpenSlice";
+import { openAdharModalFunc } from "../../../../Redux/features/WOR/ModalOpenSlice";
 import { useCaptainAcceptImageCard } from "./CaptainAcceptImageCard.hook";
 
 const CaptainAcceptImageCard = ({ captain }) => {
   const dispatch = useDispatch();
   const { verificationData } = useCaptainAcceptImageCard();
-  // const options = {
-  //   labels: ["Assign", "Not Assign"],
-  //   colors: ["#b8bbbf", "#ff6f00"],
-  // };
-  // const [update, setUpdate] = useState([30, 70]);
+
   return (
     <div className="captain-accept-image-card">
       <CaptainImageDisplay captain={captain} />
       <div className="captain-accept-image-second-card">
         <div className="captain-accept-image-second-f-card">
           <div className="captain-accept-image-second-f-f">
-            <span className="captain-accept-image-percentage-span">20%</span>
+            <span className="captain-accept-image-percentage-span">
+              {captain?.panAadharCardVerified ? "30%" : "0%"}
+            </span>
             <FaCaretDown
               onClick={() =>
                 dispatch(
                   openAdharModalFunc({
                     title: "Pan Aadhar Card Verification",
                     captain: captain,
+                    whatDisplayDocs: "pan-aadhar",
                   })
                 )
               }
@@ -42,13 +37,16 @@ const CaptainAcceptImageCard = ({ captain }) => {
             </div>
           </div>
           <div className="captain-accept-image-second-f-s">
-            <span className="captain-accept-image-percentage-span">20%</span>
+            <span className="captain-accept-image-percentage-span">
+              {captain?.rcCardVerified ? "30%" : "0%"}
+            </span>
             <FaCaretDown
               onClick={() =>
                 dispatch(
-                  openVehicleRcModalFunc({
+                  openAdharModalFunc({
                     title: "Vehicle Rc Verification",
                     captain: captain,
+                    whatDisplayDocs: "rc",
                   })
                 )
               }
@@ -60,13 +58,16 @@ const CaptainAcceptImageCard = ({ captain }) => {
             </div>
           </div>
           <div className="captain-accept-image-second-ff-t">
-            <span className="captain-accept-image-percentage-span">20%</span>
+            <span className="captain-accept-image-percentage-span">
+              {captain?.licenseCardVerified ? "40%" : "0%"}
+            </span>
             <FaCaretDown
               onClick={() =>
                 dispatch(
-                  openDrivingLicenceModalFunc({
+                  openAdharModalFunc({
                     title: "Driving Licence Verification",
                     captain: captain,
+                    whatDisplayDocs: "licence",
                   })
                 )
               }
@@ -92,13 +93,17 @@ const CaptainAcceptImageCard = ({ captain }) => {
             <div>
               <span>Not-Verified</span>
             </div>
-            <span className="captain-accept-image-percentage-span">20%</span>
+            <span className="captain-accept-image-percentage-span">
+              {" "}
+              {captain?.panAadharCardVerified ? "30%" : "0%"}
+            </span>
             <FaCaretDown
               onClick={() =>
                 dispatch(
                   openAdharModalFunc({
                     title: "Pan Aadhar Card Verification",
                     captain: captain,
+                    whatDisplayDocs: "pan/aadhar",
                   })
                 )
               }
@@ -110,13 +115,16 @@ const CaptainAcceptImageCard = ({ captain }) => {
             <div>
               <span>Not-Verified</span>
             </div>
-            <span className="captain-accept-image-percentage-span">20%</span>
+            <span className="captain-accept-image-percentage-span">
+              {captain?.rcCardVerified ? "30%" : "0%"}
+            </span>
             <FaCaretDown
               onClick={() =>
                 dispatch(
-                  openVehicleRcModalFunc({
+                  openAdharModalFunc({
                     title: "Vehicle Rc Verification",
                     captain: captain,
+                    whatDisplayDocs: "rc",
                   })
                 )
               }
@@ -128,13 +136,16 @@ const CaptainAcceptImageCard = ({ captain }) => {
             <div>
               <span>Not-Verified</span>
             </div>
-            <span className="captain-accept-image-percentage-span">20%</span>
+            <span className="captain-accept-image-percentage-span">
+              {captain?.licenseCardVerified ? "40%" : "0%"}
+            </span>
             <FaCaretDown
               onClick={() =>
                 dispatch(
-                  openDrivingLicenceModalFunc({
+                  openAdharModalFunc({
                     title: "Driving Licence Verification",
                     captain: captain,
+                    whatDisplayDocs: "licence",
                   })
                 )
               }

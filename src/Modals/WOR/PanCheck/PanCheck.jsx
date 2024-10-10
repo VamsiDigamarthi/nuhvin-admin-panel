@@ -1,13 +1,15 @@
 import React from "react";
 import "./PanCheck.css";
-import { useSelector } from "react-redux";
 import PanLeft from "./PanLeft/PanLeft";
 import { usePanCheckHook } from "./PanCheck.hook";
 import PanRight from "./PanRight/PanRight";
 const PanCheck = () => {
-  const { captain } = useSelector((state) => state.captainModal);
-  const { isPanCardOrAadharCard } = usePanCheckHook({ captain });
-  console.log(captain);
+  const {
+    whatDisplayImage,
+    whatDisplayDocument,
+    whatDisplayContent,
+    onPanOrAadharVerificationFun,
+  } = usePanCheckHook();
   return (
     <div className="pan-check">
       <PanCheckSomeUi />
@@ -15,28 +17,18 @@ const PanCheck = () => {
         <button>Not-Verified</button>
       </div> */}
       <div className="pan-check-verified-btn-two">
-        <button>Verified</button>
+        <button onClick={onPanOrAadharVerificationFun}>Verified</button>
       </div>
       {/* main content */}
       <div className="pan-main-content">
         <div className="pan-main-content-left">
-          {/* <PanLeft
-            panCard={
-              isPanCardOrAadharCard
-                ? captain?.pan ?? null
-                : captain?.adhar ?? null
-            }
-            isPanCardOrAadharCard={isPanCardOrAadharCard}
-          /> */}
+          <PanLeft
+            panCard={whatDisplayImage}
+            whatDisplayDocument={whatDisplayDocument}
+          />
         </div>
         <div className="pan-main-content-right">
-          {/* <PanRight
-            panCardDetails={
-              isPanCardOrAadharCard
-                ? captain?.panCardDetails ?? null
-                : captain?.aadharCardDetails ?? null
-            }
-          /> */}
+          <PanRight panCardDetails={whatDisplayContent} />
         </div>
       </div>
     </div>

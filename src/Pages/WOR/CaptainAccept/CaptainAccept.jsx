@@ -7,7 +7,8 @@ import { useCaptainAccept } from "./CaptainAccept.hook";
 import PanCheck from "../../../Modals/WOR/PanCheck/PanCheck";
 
 const CaptainAccept = () => {
-  const { dispatch, modalComponents, modals } = useCaptainAccept();
+  const { dispatch, openAdhaPanModal, openContent, closeAdharModalFunc } =
+    useCaptainAccept();
 
   return (
     <>
@@ -19,21 +20,20 @@ const CaptainAccept = () => {
           <CaptainAcceptTable />
         </div>
       </div>
-      {modals.map(
-        ({ isOpen, content, modalType }) =>
-          isOpen && (
-            <ModalTemplate
-              key={modalType}
-              title={content}
-              onClose={() => dispatch(modalComponents[modalType].closeFunc())}
-            >
-              {/* <PanCheck /> */}
-              {React.createElement(modalComponents[modalType].component)}
-            </ModalTemplate>
-          )
+      {openAdhaPanModal && (
+        <ModalTemplate
+          title={openContent}
+          onClose={() => dispatch(closeAdharModalFunc())}
+        >
+          <PanCheck />
+        </ModalTemplate>
       )}
     </>
   );
 };
 
 export default CaptainAccept;
+
+// {
+//   /* {React.createElement(modalComponents[modalType].component)} */
+// }

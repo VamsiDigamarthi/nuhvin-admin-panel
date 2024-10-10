@@ -12,6 +12,8 @@ const CaptainAcceptTableSingleCard = ({ captain }) => {
     onCancelClick,
     onWhichOpenDetails,
     detailsOpen,
+    storeUnVerifiedDetails,
+    onChangeTextArea,
   } = useCaptainAcceptTableSingleCard();
 
   return (
@@ -28,9 +30,13 @@ const CaptainAcceptTableSingleCard = ({ captain }) => {
           <CaptainAcceptRejectedBtn
             onCancelClickOpenTextarea={onCancelClickOpenTextarea}
             onCancelClick={onCancelClick}
+            captain={captain}
+            storeUnVerifiedDetails={storeUnVerifiedDetails}
           />
           {onCancelClickOpenTextarea && (
             <textarea
+              value={storeUnVerifiedDetails}
+              onChange={onChangeTextArea}
               placeholder="Description"
               className="captain-accept-table-btn-text-card-textarea"
             />

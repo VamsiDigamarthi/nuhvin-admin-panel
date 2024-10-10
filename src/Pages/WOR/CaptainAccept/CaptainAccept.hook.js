@@ -1,56 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import PanCheck from "../../../Modals/WOR/PanCheck/PanCheck";
-import VehicleRc from "../../../Modals/WOR/VehicleRc/VehicleRc";
-import DrivingLicence from "../../../Modals/WOR/DrivingLicence/DrivingLicence";
-import {
-  closeAdharModalFunc,
-  closeDrivingLicenceModalFunc,
-  closeVehicleRcModalFunc,
-} from "../../../Redux/features/WOR/ModalOpenSlice";
+
+import { closeAdharModalFunc } from "../../../Redux/features/WOR/ModalOpenSlice";
 
 export const useCaptainAccept = () => {
   const dispatch = useDispatch();
 
-  const modalComponents = {
-    openAdhaPanModal: { component: PanCheck, closeFunc: closeAdharModalFunc },
-    openVehicleRcModal: {
-      component: VehicleRc,
-      closeFunc: closeVehicleRcModalFunc,
-    },
-    openDrivingLicenceModal: {
-      component: DrivingLicence,
-      closeFunc: closeDrivingLicenceModalFunc,
-    },
-  };
-  const {
-    openAdhaPanModal,
-    openVehicleRcModal,
-    openDrivingLicenceModal,
-    openContent,
-    openVehicleRcContent,
-    openDrivingLicenceContent,
-  } = useSelector((state) => state.captainModal);
+  const { openAdhaPanModal, openContent } = useSelector(
+    (state) => state.captainModal
+  );
 
-  const modals = [
-    {
-      isOpen: openAdhaPanModal,
-      content: openContent,
-      modalType: "openAdhaPanModal",
-    },
-    {
-      isOpen: openVehicleRcModal,
-      content: openVehicleRcContent,
-      modalType: "openVehicleRcModal",
-    },
-    {
-      isOpen: openDrivingLicenceModal,
-      content: openDrivingLicenceContent,
-      modalType: "openDrivingLicenceModal",
-    },
-  ];
   return {
     dispatch,
-    modalComponents,
-    modals,
+    openAdhaPanModal,
+    openContent,
+    closeAdharModalFunc,
   };
 };

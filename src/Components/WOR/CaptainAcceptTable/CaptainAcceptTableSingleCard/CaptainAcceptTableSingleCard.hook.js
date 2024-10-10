@@ -4,6 +4,12 @@ export const useCaptainAcceptTableSingleCard = () => {
   // store which details are open
   const [detailsOpen, setDetailsOpen] = useState("");
 
+  const [storeUnVerifiedDetails, setStoreUnVerifiedDetails] = useState("");
+
+  const onChangeTextArea = (e) => {
+    setStoreUnVerifiedDetails(e.target.value);
+  };
+
   const [onCancelClickOpenTextarea, setOnCancelClickOpenTextarea] =
     useState(false);
 
@@ -23,5 +29,7 @@ export const useCaptainAcceptTableSingleCard = () => {
     onCancelClick,
     onWhichOpenDetails, // this function which details are open
     detailsOpen, // return which details are open for editing or viewing
+    storeUnVerifiedDetails,
+    onChangeTextArea,
   };
 };

@@ -4,20 +4,13 @@ import { imageUrl } from "../../../../Core/url";
 import { usePanLeftHook } from "./PanLeft.hook";
 import PanDatNotFound from "../PanDataNotFound/PanDatNotFound";
 
-const PanLeft = ({ panCard, isPanCardOrAadharCard }) => {
+const PanLeft = ({ panCard, whatDisplayDocument }) => {
   const { handleDoubleClick, zoomStyles, zoom } = usePanLeftHook();
   const panImage = `${imageUrl}/${panCard}`;
   return (
     <div className="pan-left">
       {panCard === null ? (
-        <PanDatNotFound
-          title={`${
-            isPanCardOrAadharCard
-              ? "Pan Card Details Not Available"
-              : "Aadhaar Card Details Available"
-          }`}
-          color="#e02e88"
-        />
+        <PanDatNotFound title={`${whatDisplayDocument}`} color="#e02e88" />
       ) : (
         <div>
           <img
