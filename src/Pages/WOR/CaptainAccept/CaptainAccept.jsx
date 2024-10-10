@@ -1,9 +1,10 @@
 import React from "react";
 import "./CaptainAccept.css";
-import CaptainAcceptTable from "../../Components/CaptainAcceptTable/CaptainAcceptTable";
+import CaptainAcceptTable from "../../../Components/WOR/CaptainAcceptTable/CaptainAcceptTable";
 
-import ModalTemplate from "../../Modals/ModalTemplate/ModalTemplate";
+import ModalTemplate from "../../../Modals/ModalTemplate/ModalTemplate";
 import { useCaptainAccept } from "./CaptainAccept.hook";
+import PanCheck from "../../../Modals/WOR/PanCheck/PanCheck";
 
 const CaptainAccept = () => {
   const { dispatch, modalComponents, modals } = useCaptainAccept();
@@ -26,6 +27,7 @@ const CaptainAccept = () => {
               title={content}
               onClose={() => dispatch(modalComponents[modalType].closeFunc())}
             >
+              {/* <PanCheck /> */}
               {React.createElement(modalComponents[modalType].component)}
             </ModalTemplate>
           )

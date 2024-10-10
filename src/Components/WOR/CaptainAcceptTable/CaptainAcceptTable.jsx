@@ -2,8 +2,8 @@ import React from "react";
 import "./CaptaineAcceptTable.css";
 import CaptainAcceptTableSingleCard from "./CaptainAcceptTableSingleCard/CaptainAcceptTableSingleCard";
 import { useCaptainAcceptTable } from "./CaptainAcceptTable.hook";
-import Loader from "../../utils/Loader/Loader";
-import Erro from "../../utils/Error/Erro";
+import Loader from "../../../utils/Loader/Loader";
+import Erro from "../../../utils/Error/Erro";
 const CaptainAcceptTable = () => {
   const { loading, error, captainDetailsRe } = useCaptainAcceptTable();
   return (

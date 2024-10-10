@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import PanCheck from "../../Modals/PanCheck/PanCheck";
-import VehicleRc from "../../Modals/VehicleRc/VehicleRc";
-import DrivingLicence from "../../Modals/DrivingLicence/DrivingLicence";
+import PanCheck from "../../../Modals/WOR/PanCheck/PanCheck";
+import VehicleRc from "../../../Modals/WOR/VehicleRc/VehicleRc";
+import DrivingLicence from "../../../Modals/WOR/DrivingLicence/DrivingLicence";
 import {
   closeAdharModalFunc,
   closeDrivingLicenceModalFunc,
   closeVehicleRcModalFunc,
-} from "../../Redux/features/ModalOpenSlice";
+} from "../../../Redux/features/WOR/ModalOpenSlice";
 
 export const useCaptainAccept = () => {
   const dispatch = useDispatch();

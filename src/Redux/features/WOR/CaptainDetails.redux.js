@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { API } from "../../Core/url";
+import { API } from "../../../Core/url";
 
 const initialState = {
   loading: false,
@@ -16,7 +16,7 @@ export const adminCaptainDetails = createAsyncThunk(
           Authorization: `Bearer ${token}`, // Pass the token here
         },
       });
-
+      console.log(response.data);
       return response.data;
     } catch (err) {
       if (err.response && err.response.data && err.response.data.message) {

@@ -12,6 +12,7 @@ export const fetchUserProfile = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       });
+
       return response.data; // Return profile data if successful
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);

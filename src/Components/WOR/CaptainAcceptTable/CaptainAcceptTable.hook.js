@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { adminCaptainDetails } from "../../Redux/features/CaptainDetails.redux";
+import { adminCaptainDetails } from "../../../Redux/features/WOR/CaptainDetails.redux";
+// import { adminCaptainDetails } from "../../Redux/features/WOR/CaptainDetails.redux";
 
 export const useCaptainAcceptTable = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ export const useCaptainAcceptTable = () => {
 
   // fetch all captain details with async/await
   useEffect(() => {
-    token && dispatch(adminCaptainDetails({ token }));
+    dispatch(adminCaptainDetails({ token }));
   }, [token, dispatch]);
 
   return {

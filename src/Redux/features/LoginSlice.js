@@ -1,9 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { API } from "../../Core/url";
 
+const getStoredToken = () => {
+  const token = localStorage.getItem("token");
+  return token ? JSON.parse(token) : null;
+};
+
 const initialState = {
   loading: false,
-  token: null,
+  token: getStoredToken(),
   error: "",
 };
 

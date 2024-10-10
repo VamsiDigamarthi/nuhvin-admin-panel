@@ -52,6 +52,10 @@
   border-radius: 0.5rem;
   box-sizing: border-box;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .login-form .login-input-div input:focus {
@@ -61,6 +65,7 @@
 .login-form .forgot-password {
   text-decoration: none;
   color: black;
+  align-self: flex-end;
 }
 
 .login-form .login-input-div .login-btn {

@@ -5,7 +5,7 @@ import Sidebar from "./Layout/SideBar/SideBar";
 import Login from "./Pages/Login/Login";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import Home from "./Pages/Home/Home";
-import CaptainAccept from "./Pages/CaptainAccept/CaptainAccept";
+import CaptainAccept from "./Pages/WOR/CaptainAccept/CaptainAccept";
 
 function App() {
   return (

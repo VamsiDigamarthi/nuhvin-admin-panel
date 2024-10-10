@@ -72,6 +72,41 @@
   clip-path: polygon(0 44%, 100% 0, 100% 100%, 0 57%);
 }
 
+.pan-check-verified-btn {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, 0%);
+  z-index: 5;
+}
+
+.pan-check-verified-btn > button {
+  background-color: #e8f593;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 110px;
+}
+
+.pan-check-verified-btn-two {
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  transform: translate(-50%, 0%);
+  z-index: 5;
+}
+.pan-check-verified-btn-two > button {
+  background-color: #fa92c6;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 110px;
+}
+
 /* main logic */
 
 .pan-main-content {
@@ -88,11 +123,14 @@
 .pan-main-content-left {
   width: 50%;
   height: 100%;
-  background-color: red;
+  /* background-color: red; */
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.022);
 }
 
 .pan-main-content-right {
   width: 50%;
   height: 100%;
-  background-color: yellow;
+  background-color: rgba(0, 0, 0, 0.007);
+  overflow-y: scroll;
 }

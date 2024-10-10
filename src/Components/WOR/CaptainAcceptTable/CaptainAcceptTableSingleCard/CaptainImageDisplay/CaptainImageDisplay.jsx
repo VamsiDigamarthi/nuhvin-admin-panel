@@ -1,6 +1,6 @@
 import React from "react";
 import "./CaptainImageDisplay.css";
-import { imageUrl } from "../../../../Core/url";
+import { imageUrl } from "../../../../../Core/url";
 const CaptainImageDisplay = ({ captain }) => {
   let imagePath =
     captain?.profilePic?.length > 0

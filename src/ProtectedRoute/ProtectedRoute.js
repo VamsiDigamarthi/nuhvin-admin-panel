@@ -8,8 +8,8 @@ import Loader from "../utils/Loader/Loader";
 const ProtectedRoute = () => {
   const dispatch = useDispatch();
   const tokenFromStorage = localStorage.getItem("token");
-  const { loading, error } = useSelector((state) => state.profile);
-
+  const { loading, error, profile } = useSelector((state) => state.profile);
+  console.log(profile);
   useEffect(() => {
     if (tokenFromStorage) {
       const token = JSON.parse(tokenFromStorage);

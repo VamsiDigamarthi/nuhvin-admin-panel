@@ -1,7 +1,7 @@
 import React from "react";
 import "./CaptainTableSingle.css";
 import { FaChevronDown } from "react-icons/fa";
-import { imageUrl } from "../../../../Core/url";
+import { imageUrl } from "../../../../../Core/url";
 const CaptainTableSingle = ({ captain, onWhichOpenDetails }) => {
   let imagePath =
     captain?.profilePic?.length > 0

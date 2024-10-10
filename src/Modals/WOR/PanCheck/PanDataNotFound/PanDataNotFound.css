@@ -1,0 +1,25 @@
+.pan-data-not-found {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pan-data-not-found.reverse {
+  flex-direction: row-reverse; /* Reverse the order of children */
+}
+
+.pan-data-not-found > h2 {
+  color: #fff;
+  font-size: 20px;
+}
+
+.pan-data-not-found > span {
+  width: 60px;
+  height: 60px;
+  background-color: #e02e88;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transform: rotate(-180deg); */
+}

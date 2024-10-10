@@ -4,6 +4,7 @@ import "./Login.css";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useLogin } from "./Login.hook";
+import Loader from "../../utils/Loader/Loader";
 
 export default function Login() {
   const {
@@ -15,7 +16,7 @@ export default function Login() {
     loading,
     error,
   } = useLogin();
-  console.log(error);
+
   return (
     <section id="login-section">
       <div className="login-container">
@@ -52,12 +53,12 @@ export default function Login() {
             </button>
           </div>
           <div className="link-with-error">
-            {error && <p>{error}</p>}
             <Link className="forgot-password">Forgot Password ?</Link>
+            {error && <p>{error}</p>}
           </div>
           <div className="login-input-div">
             <button onClick={onLoginSubmit} className="login-btn">
-              Sign In
+              {loading ? <Loader /> : " Sign In"}
             </button>
           </div>
         </div>

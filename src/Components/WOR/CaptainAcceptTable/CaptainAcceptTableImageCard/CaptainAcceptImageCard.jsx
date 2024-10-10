@@ -7,7 +7,7 @@ import {
   openAdharModalFunc,
   openDrivingLicenceModalFunc,
   openVehicleRcModalFunc,
-} from "../../../Redux/features/ModalOpenSlice";
+} from "../../../../Redux/features/WOR/ModalOpenSlice";
 import { useCaptainAcceptImageCard } from "./CaptainAcceptImageCard.hook";
 
 const CaptainAcceptImageCard = ({ captain }) => {
