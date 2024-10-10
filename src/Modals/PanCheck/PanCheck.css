@@ -1,0 +1,98 @@
+.pan-check {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 1px solid lightgrey;
+}
+
+.pan-left-slight {
+  height: 100%;
+  width: 60px;
+  background-color: #e02e88;
+  z-index: 1;
+}
+
+.pan-right-slight {
+  height: 100%;
+  width: 60px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #e8f593;
+  z-index: 1;
+}
+
+.vs-card {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  background-color: #fff;
+}
+
+.vs-card > h2 {
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.836);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.pan-left-curv-first {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(to right, #e4529b, #fa92c6);
+  clip-path: polygon(0 0, 100% 44%, 100% 57%, 0% 100%);
+}
+
+.pan-left-curv-second {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(to right, #f0f8b9, #e8f593);
+  clip-path: polygon(0 44%, 100% 0, 100% 100%, 0 57%);
+}
+
+/* main logic */
+
+.pan-main-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  gap: 120px;
+}
+
+.pan-main-content-left {
+  width: 50%;
+  height: 100%;
+  background-color: red;
+}
+
+.pan-main-content-right {
+  width: 50%;
+  height: 100%;
+  background-color: yellow;
+}

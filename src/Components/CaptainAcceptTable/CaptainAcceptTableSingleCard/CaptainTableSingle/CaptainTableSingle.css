@@ -1,0 +1,71 @@
+.captaine-accept-table-single-card {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 4px 30px;
+  /* background-color: red; */
+  border-bottom: 1px solid rgb(240, 237, 237);
+}
+
+.captaine-accept-table-single-card > :nth-child(1) {
+  width: 35%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.captaine-accept-table-single-card > :nth-child(1) > img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.captaine-accept-table-single-card > :nth-child(1) > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 0.4rem; */
+  /* background-color: red; */
+}
+
+.captaine-accept-table-single-card > :nth-child(1) > div > :nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(59, 59, 59);
+  margin-bottom: -5px;
+}
+
+.captaine-accept-table-single-card > :nth-child(1) > div > span {
+  color: grey;
+  font-size: 13px;
+}
+
+.captaine-accept-table-single-card > :nth-child(2) {
+  width: 25%;
+  font-weight: 600;
+}
+
+.captaine-accept-table-single-card > :nth-child(3) {
+  width: 15%;
+}
+.captaine-accept-table-single-card > :nth-child(3) > span {
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: yellow;
+  background-color: #4fa953;
+  font-weight: 600;
+  color: #fff;
+}
+
+.captaine-accept-table-single-card > :nth-child(4) {
+  width: 20%;
+  font-weight: 600;
+}
+
+.captaine-accept-table-single-card > :nth-child(5) {
+  width: 5%;
+  color: lightgrey;
+  cursor: pointer;
+}

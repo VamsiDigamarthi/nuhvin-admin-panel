@@ -1,0 +1,29 @@
+.captain-accept-card {
+  width: 100%;
+  height: 93%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.captaine-accept-top-card {
+  position: absolute;
+  left: 30px;
+  top: -30px;
+  background-color: #e02e88;
+  border-radius: 30px;
+  width: calc(100% - 60px);
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+.captaine-accept-table-main {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 100%;
+}

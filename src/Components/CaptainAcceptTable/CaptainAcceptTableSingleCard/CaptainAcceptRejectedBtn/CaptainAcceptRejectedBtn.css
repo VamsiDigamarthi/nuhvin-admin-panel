@@ -1,0 +1,49 @@
+.chart-container {
+  width: 200px;
+  height: 200px;
+}
+
+.captain-accept-table-btn-text-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0px 40px;
+}
+
+.captaine-accept-table-single-confirm-btn {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 4px 30px;
+  justify-content: space-around;
+}
+
+.captaine-accept-table-single-confirm-btn > button {
+  width: 150px;
+  height: 38px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.captaine-accept-table-single-confirm-btn > :nth-child(1) {
+  background-color: #f3fa98;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+}
+
+.captaine-accept-table-single-confirm-btn > :nth-child(3) {
+  background-color: #fabf98;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+}
+
+.captaine-accept-table-single-confirm-btn > :nth-child(2) {
+  /* Adjust the chart style */
+  width: 250px;
+  height: 250px;
+}

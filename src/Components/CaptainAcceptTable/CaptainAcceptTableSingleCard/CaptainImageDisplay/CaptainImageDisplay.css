@@ -1,0 +1,48 @@
+.captaine-accept-image-first {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.captaine-accept-image-first > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: pink;
+  border: 2px solid #e02e88;
+  object-fit: fill;
+}
+
+.captain-accept-image-first-inner-card {
+  width: 70%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.captain-accept-image-first-inner-card > h1 {
+  font-size: 36px;
+}
+.captain-accept-image-first-inner-card > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.captain-accept-image-first-inner-card > div > span {
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgb(247, 243, 243);
+  padding: 4px;
+  width: 200px;
+
+  text-align: center;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}

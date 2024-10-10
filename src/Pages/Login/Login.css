@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#login-section {
+  background-color: rgb(240 239 246);
+  height: 100vh;
+}
+
+.login-container {
+  height: 100%;
+  width: 95%;
+  margin: 0 auto;
+  font-family: "Urbanist", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.login-image {
+  width: 50%;
+}
+
+.login-image img {
+  width: 100%;
+  border-radius: 1.5rem;
+}
+
+.login-form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-input-div {
+  width: 100%;
+}
+
+.login-form .login-input-div input,
+.login-form .login-input-div .login-btn {
+  background: #fff;
+  padding: 1.3rem 0.8rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.login-form .login-input-div input:focus {
+  outline: 1px solid #e02e88;
+}
+
+.login-form .forgot-password {
+  text-decoration: none;
+  color: black;
+}
+
+.login-form .login-input-div .login-btn {
+  background-color: #e02388;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-form .login-input-div .login-btn:hover {
+  background-color: #e02388d7;
+  /* font-weight: 800; */
+}
+
+.password-div {
+  position: relative;
+
+  & .eye {
+    border: none;
+    background: none;
+    outline: none;
+    position: absolute;
+    top: 1.28rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+}
+
+.link-with-error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.link-with-error > p {
+  color: red;
+}
+
+@media (width < 768px) {
+  .login-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  #login-section {
+    height: auto;
+  }
+
+  .login-form {
+    width: 100%;
+    padding: 2rem;
+    order: 1;
+  }
+
+  .login-image {
+    width: 90%;
+    order: 2;
+  }
+}
