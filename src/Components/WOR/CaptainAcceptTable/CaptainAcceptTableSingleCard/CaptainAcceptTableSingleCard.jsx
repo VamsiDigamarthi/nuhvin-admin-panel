@@ -6,7 +6,7 @@ import { useCaptainAcceptTableSingleCard } from "./CaptainAcceptTableSingleCard.
 
 import CaptainAcceptRejectedBtn from "./CaptainAcceptRejectedBtn/CaptainAcceptRejectedBtn";
 
-const CaptainAcceptTableSingleCard = ({ captain }) => {
+const CaptainAcceptTableSingleCard = ({ captain, userRole }) => {
   const {
     onCancelClickOpenTextarea,
     onCancelClick,
@@ -25,13 +25,14 @@ const CaptainAcceptTableSingleCard = ({ captain }) => {
       {detailsOpen === captain?._id && (
         <>
           <div className="captaine-accept-table-single-parent-inner">
-            <CaptainAcceptImageCard captain={captain} />
+            <CaptainAcceptImageCard userRole={userRole} captain={captain} />
           </div>
           <CaptainAcceptRejectedBtn
             onCancelClickOpenTextarea={onCancelClickOpenTextarea}
             onCancelClick={onCancelClick}
             captain={captain}
             storeUnVerifiedDetails={storeUnVerifiedDetails}
+            userRole={userRole}
           />
           {onCancelClickOpenTextarea && (
             <textarea

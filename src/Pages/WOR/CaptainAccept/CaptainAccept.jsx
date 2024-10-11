@@ -6,7 +6,7 @@ import ModalTemplate from "../../../Modals/ModalTemplate/ModalTemplate";
 import { useCaptainAccept } from "./CaptainAccept.hook";
 import PanCheck from "../../../Modals/WOR/PanCheck/PanCheck";
 
-const CaptainAccept = () => {
+const CaptainAccept = ({ userOrCaptainTitle, userRole }) => {
   const { dispatch, openAdhaPanModal, openContent, closeAdharModalFunc } =
     useCaptainAccept();
 
@@ -14,10 +14,10 @@ const CaptainAccept = () => {
     <>
       <div className="captain-accept-card">
         <div className="captaine-accept-top-card">
-          <h2>Captain Details</h2>
+          <h2>{userOrCaptainTitle} Details</h2>
         </div>
         <div className="captaine-accept-table-main">
-          <CaptainAcceptTable />
+          <CaptainAcceptTable userRole={userRole} />
         </div>
       </div>
       {openAdhaPanModal && (
@@ -25,7 +25,7 @@ const CaptainAccept = () => {
           title={openContent}
           onClose={() => dispatch(closeAdharModalFunc())}
         >
-          <PanCheck />
+          <PanCheck userRole={userRole} />
         </ModalTemplate>
       )}
     </>

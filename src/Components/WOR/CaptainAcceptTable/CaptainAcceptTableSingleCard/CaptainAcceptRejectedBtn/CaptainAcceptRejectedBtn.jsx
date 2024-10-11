@@ -7,16 +7,27 @@ const CaptainAcceptRejectedBtn = ({
   onCancelClick,
   captain,
   storeUnVerifiedDetails,
+  userRole,
 }) => {
-  const { options, update, onCaptainVerified, onCaptainUnVerified } =
-    useCaptainAcceptRejectedHook({
-      captain,
-      storeUnVerifiedDetails,
-    });
+  const {
+    options,
+    update,
+    onCaptainVerified,
+    onCaptainUnVerified,
+    isButtonDisabled, //  HOLD VERIFICATION BTN
+  } = useCaptainAcceptRejectedHook({
+    captain,
+    storeUnVerifiedDetails,
+    userRole,
+  });
   return (
     <div className="captain-accept-table-btn-text-card">
       <div className="captaine-accept-table-single-confirm-btn">
-        <button className="verified-btn" onClick={onCaptainVerified}>
+        <button
+          style={{ cursor: isButtonDisabled ? "not-allowed" : "pointer" }}
+          className="verified-btn"
+          onClick={onCaptainVerified}
+        >
           Verified
         </button>
         <Chart options={options} series={update} type="donut" width="100%" />

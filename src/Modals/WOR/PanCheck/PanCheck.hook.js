@@ -4,7 +4,7 @@ import { API } from "../../../Core/url";
 import { closeAdharModalFunc } from "../../../Redux/features/WOR/ModalOpenSlice";
 import { adminCaptainDetails } from "../../../Redux/features/WOR/CaptainDetails.redux";
 
-export const usePanCheckHook = () => {
+export const usePanCheckHook = ({ userRole }) => {
   const dispatch = useDispatch();
 
   const { captain, whatDisplayDocs } = useSelector(
@@ -14,7 +14,7 @@ export const usePanCheckHook = () => {
   const [whatDisplayDocument, setWhatDisplayDocument] = useState(null);
   const [whatDisplayImage, setWhatDisplayImage] = useState(null);
   const [whatDisplayContent, setWhatDisplayContent] = useState(null);
-
+  console.log("modal", captain);
   useEffect(() => {
     if (whatDisplayDocs === "pan-aadhar") {
       if (captain?.pan) {
@@ -28,7 +28,11 @@ export const usePanCheckHook = () => {
         // Neither PAN nor Aadhar is available
         setWhatDisplayDocument("PAN/Aadhar Card Details Not Available");
         setWhatDisplayImage(null); // No image available
-        setWhatDisplayContent(null);
+        if (captain?.pan === null) {
+          setWhatDisplayContent(captain?.panCardDetails);
+        } else if (captain?.adhar === null) {
+          setWhatDisplayContent(captain?.adharCardDetails);
+        }
       }
     } else if (whatDisplayDocs === "rc") {
       setWhatDisplayDocument("RC Card Details Not Available");
@@ -55,7 +59,7 @@ export const usePanCheckHook = () => {
       .then((res) => {
         console.log(res.data);
         alert(res?.data?.message);
-        dispatch(adminCaptainDetails({ token })); // fetch all captaine
+        // dispatch(adminCaptainDetails({ token, userRole })); // fetch all captaine
         dispatch(closeAdharModalFunc()); // close the modal
       })
       .catch((e) => {

@@ -6,6 +6,7 @@ import { adminCaptainDetails } from "../../../../../Redux/features/WOR/CaptainDe
 export const useCaptainAcceptRejectedHook = ({
   captain,
   storeUnVerifiedDetails,
+  userRole,
 }) => {
   const { token } = useSelector((state) => state.token);
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ export const useCaptainAcceptRejectedHook = ({
       .then((res) => {
         console.log(res.data);
         alert(res?.data?.message);
-        dispatch(adminCaptainDetails({ token })); // fetch all captaine
+        dispatch(adminCaptainDetails({ token, userRole })); // fetch all captaine
       })
       .catch((e) => {
         console.log(e);
@@ -99,10 +100,24 @@ export const useCaptainAcceptRejectedHook = ({
       });
   };
 
+  /*
+    display cursor based on the condition first check if role is user or not
+    if user check only one condition like pan or ardhan is verified or not
+    if role is captain check pan nd rc and licence is verified or not if not verified final verification btn 
+    not aloowed
+  */
+  const isButtonDisabled =
+    userRole === "user"
+      ? !captain?.panAadharCardVerified
+      : !captain?.panAadharCardVerified ||
+        !captain?.rcCardVerified ||
+        !captain?.licenseCardVerified;
+
   return {
     options,
     update,
     onCaptainVerified,
     onCaptainUnVerified,
+    isButtonDisabled, // hold verification btn
   };
 };

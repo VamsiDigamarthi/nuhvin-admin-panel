@@ -2,12 +2,20 @@ import React from "react";
 import "./CaptainTableSingle.css";
 import { FaChevronDown } from "react-icons/fa";
 import { imageUrl } from "../../../../../Core/url";
-const CaptainTableSingle = ({ captain, onWhichOpenDetails }) => {
+const CaptainTableSingle = ({
+  captain,
+  onWhichOpenDetails,
+  btnText = false,
+}) => {
   let imagePath =
     captain?.profilePic?.length > 0
       ? `${imageUrl}/${captain?.profilePic}`
       : "/images/user-profile.png";
-  const statusColor = captain?.reviewToVerified ? "yellow" : "#4fa953";
+  const statusColor = captain?.holdingCaptain
+    ? "#f7b602" // If the captain is holding
+    : captain?.reviewToVerified
+    ? "#3bd4c2" // If the captain's review is verified
+    : "#4fa953";
   return (
     <div className="captaine-accept-table-single-card">
       <div>
@@ -24,10 +32,16 @@ const CaptainTableSingle = ({ captain, onWhichOpenDetails }) => {
             background: statusColor,
           }}
         >
-          {captain?.reviewToVerified ? "Review" : "Pending"}
+          {btnText
+            ? captain?.holdingCaptain
+              ? "Hold"
+              : "Release"
+            : captain?.reviewToVerified
+            ? "Review"
+            : "Pending"}
         </span>
       </span>
-      <span>{captain?.signUpDateAndTime?.slice(0, 10)}</span>
+      <span>{captain?.averageRating ? captain?.averageRating : "0"}</span>
       <span>
         <FaChevronDown
           onClick={() => onWhichOpenDetails(captain?._id)}

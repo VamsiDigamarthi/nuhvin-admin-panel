@@ -9,25 +9,26 @@ import { FaHome, FaLock, FaUser } from "react-icons/fa";
 export const routes = [
   {
     path: "/captain-details",
-    name: "captain-details",
+    name: "Accept Captain",
     icon: <MdOutlineSupervisedUserCircle />,
   },
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/accept-user",
+    name: "Accept User",
     icon: <FaHome />,
   },
+
   {
-    path: "/addvisitor",
-    name: "Add Visitor",
-    icon: <MdMessage />,
-  },
-  {
-    path: "/logoutvisistors",
-    name: "Logout Visitors",
+    path: "/captain-hold",
+    name: "Captain Hold",
     icon: <FaUser />,
   },
 
+  {
+    path: "/reviews",
+    name: "Reviews",
+    icon: <MdMessage />,
+  },
   {
     path: "/settings",
     name: "Reports",

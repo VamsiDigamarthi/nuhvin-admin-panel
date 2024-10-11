@@ -4,24 +4,27 @@ import CaptainAcceptTableSingleCard from "./CaptainAcceptTableSingleCard/Captain
 import { useCaptainAcceptTable } from "./CaptainAcceptTable.hook";
 import Loader from "../../../utils/Loader/Loader";
 import Erro from "../../../utils/Error/Erro";
-const CaptainAcceptTable = () => {
-  const { loading, error, captainDetailsRe } = useCaptainAcceptTable();
+import CaptainTableHeader from "./CaptainAcceptTableSingleCard/CaptainTableHeader/CaptainTableHeader";
+const CaptainAcceptTable = ({ userRole }) => {
+  const { loading, error, captainDetailsRe } = useCaptainAcceptTable({
+    userRole,
+  });
+
+  console.log(captainDetailsRe);
   return (
     <div className="captaine-accept-table">
-      <div className="captaine-accept-header">
-        <span>Captain</span>
-        <span>Phone</span>
-        <span>Status</span>
-        <span>Joining-Date</span>
-        <span></span>
-      </div>
+      <CaptainTableHeader />
       <div className="captaine-accept-table-body">
         {loading && <Loader />}
         {error && <Erro error={error} />}
         {!loading &&
           !error &&
           captainDetailsRe?.map((detail, index) => (
-            <CaptainAcceptTableSingleCard key={index} captain={detail} />
+            <CaptainAcceptTableSingleCard
+              key={index}
+              captain={detail}
+              userRole={userRole}
+            />
           ))}
       </div>
     </div>

@@ -3,15 +3,15 @@ import { API } from "../../../Core/url";
 
 const initialState = {
   loading: false,
-  captainDetailsRe: [],
+  rorderReviews: [],
   error: "",
 };
 
-export const adminCaptainDetails = createAsyncThunk(
-  "admin/captaindetails",
-  async ({ token, userRole }, { rejectWithValue }) => {
+export const adminOrderReviews = createAsyncThunk(
+  "admin/reviws",
+  async ({ token }, { rejectWithValue }) => {
     try {
-      const response = await API.get(`/admin/captains/${userRole}`, {
+      const response = await API.get(`/admin/all-reviews`, {
         headers: {
           Authorization: `Bearer ${token}`, // Pass the token here
         },
@@ -33,17 +33,17 @@ const tokenSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(adminCaptainDetails.pending, (state) => {
+      .addCase(adminOrderReviews.pending, (state) => {
         state.loading = true;
       })
-      .addCase(adminCaptainDetails.fulfilled, (state, action) => {
+      .addCase(adminOrderReviews.fulfilled, (state, action) => {
         state.loading = false;
-        state.captainDetailsRe = action.payload;
+        state.rorderReviews = action.payload;
         state.error = "";
       })
-      .addCase(adminCaptainDetails.rejected, (state, action) => {
+      .addCase(adminOrderReviews.rejected, (state, action) => {
         state.loading = false;
-        state.captainDetailsRe = [];
+        state.rorderReviews = [];
         state.error = action.payload || action.error.message;
       });
   },

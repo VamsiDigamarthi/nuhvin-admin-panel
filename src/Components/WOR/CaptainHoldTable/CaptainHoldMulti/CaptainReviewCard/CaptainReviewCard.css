@@ -1,0 +1,60 @@
+.captain-review-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 99%;
+}
+
+.captain-single-revi-fc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.captain-single-revi-fc-left {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.captain-single-revi-fc-left > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.captain-single-revi-fc-left > div {
+  display: flex;
+  flex-direction: column;
+  gap: -0.4rem;
+}
+
+.captain-single-revi-fc-left > div > h3 {
+  font-weight: 600;
+  font-size: 18px;
+}
+.captain-single-revi-fc-left > div > span {
+  color: grey;
+  font-size: 12px;
+}
+
+.captain-single-revi-fc > :nth-child(2) {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.captain-single-revi-fc > :nth-child(2) > div > h3 {
+  font-size: 17px;
+}
+
+.captain-single-revi-fc > :nth-child(2) > div > h3 > span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.captain-review-card > span {
+  font-weight: 500;
+}

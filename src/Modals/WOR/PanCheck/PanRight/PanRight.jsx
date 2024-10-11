@@ -24,7 +24,7 @@ const PanRight = ({ panCardDetails }) => {
     lastName,
     gender,
     dob,
-    status,
+    // status,
     fatherName,
     name,
     rc_body_type_desc,
@@ -70,7 +70,7 @@ const PanRight = ({ panCardDetails }) => {
           {renderDetail("Last Name", lastName)}
           {renderDetail("Gender", gender)}
           {renderDetail("Date of Birth", dob)}
-          {renderDetail("Status", status)}
+          {/* {renderDetail("Status", status)} */}
           {/* RC Card Details */}
           {renderDetail("RC Body Type Description", rc_body_type_desc)}
           {renderDetail("RC Engine Number", rc_eng_no)}

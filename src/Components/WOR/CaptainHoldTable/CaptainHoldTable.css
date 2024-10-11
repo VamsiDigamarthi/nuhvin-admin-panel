@@ -1,4 +1,4 @@
-.captaine-accept-table {
+.captain-hold-table {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.captaine-accept-table-body {
+.captaine-hold-table-body {
   width: 100%;
   display: flex;
   gap: 06rem;

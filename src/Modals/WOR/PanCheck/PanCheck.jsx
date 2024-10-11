@@ -3,13 +3,13 @@ import "./PanCheck.css";
 import PanLeft from "./PanLeft/PanLeft";
 import { usePanCheckHook } from "./PanCheck.hook";
 import PanRight from "./PanRight/PanRight";
-const PanCheck = () => {
+const PanCheck = ({ userRole }) => {
   const {
     whatDisplayImage,
     whatDisplayDocument,
     whatDisplayContent,
     onPanOrAadharVerificationFun,
-  } = usePanCheckHook();
+  } = usePanCheckHook({ userRole });
   return (
     <div className="pan-check">
       <PanCheckSomeUi />
